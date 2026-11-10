@@ -92,7 +92,7 @@ A 12,575-row synthetic retail dataset with deliberately dirty data across price,
 
 ## Let's Connect
 
-🌐 [mpho-sello.vercel.app](https://mpho-sello.vercel.app/)
+🌐 [mpho-sello.vercel.app](https://sello-mpho-portfolioo.vercel.app/)
 💼 [LinkedIn](https://www.linkedin.com/in/mpho-sello-692193241)
 📧 [sellompho1601@gmail.com](mailto:sellompho1601@gmail.com)
 📍 Bloemfontein, South Africa
