@@ -6,7 +6,7 @@
 
 I turn messy, real-world datasets into verified, decision-ready dashboards.
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-MPHO--SELLO.VERCEL.APP-1F4E79?style=for-the-badge)]([https://mpho-sello.vercel.app/](https://sello-mpho-portfolioo.vercel.app/))
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-MPHO--SELLO.VERCEL.APP-1F4E79?style=for-the-badge)]([https://sello-mpho-portfolioo.vercel.app/](https://sello-mpho-portfolioo.vercel.app/))
 [![LinkedIn](https://img.shields.io/badge/LINKEDIN-MPHO%20SELLO-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mpho-sello-692193241)
 [![Email](https://img.shields.io/badge/EMAIL-SELLOMPHO1601%40GMAIL.COM-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sellompho1601@gmail.com)
 
