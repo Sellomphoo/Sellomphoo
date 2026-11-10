@@ -2,7 +2,7 @@
 
 # Sello Mpho
 
-### Data Analyst | Excel Dashboards | Data Cleaning & Validation
+### Data Analyst | Power BI & Excel Dashboards | Data Cleaning & Validation
 
 I turn messy, real-world datasets into verified, decision-ready dashboards.
 
@@ -24,6 +24,35 @@ I work through data the way an analyst should: **clean it, verify it, then visua
 
 ## Featured Analytics Projects
 
+### 📶 MTN Customer Churn Analytics Dashboard
+**Modelling purchase lines vs customers, and reconciling to raw totals** · `Power BI` `Power Query` `DAX` `Data Modelling` `Excel`
+
+A churn analysis of 974 purchase lines belonging to just 496 customers. The central challenge was that each row was a purchase, not a customer, so counting rows would have inflated customers, churn and revenue.
+
+- Split the data into **Customers** and **Purchases** tables in Power Query, related on Customer ID, and wrote DAX measures for churn rate and revenue
+- Caught a duplicate-removal step that silently cut revenue from 199M to 96M by **reconciling the dashboard against the raw total** before sharing it
+- Found Excel misreading `Jan-25` as 25 January 2026, and rebuilt the dates from the source
+- **Findings:** churn is 29.4% (146 of 496 customers), about half of all churn reasons are price-related (better offers from competitors, high call tariffs, costly data plans), and churn is flat across tenure
+
+**Repository:** [MTN-Customer-Churn-Analytics-Dashboard---Power-BI](https://github.com/Sellomphoo/MTN-Customer-Churn-Analytics-Dashboard---Power-BI)
+
+---
+
+### 📡 Telecom Customer Analytics Dashboard
+**Customer profiling and revenue drivers** · `Power BI` `DAX` `Power Query` `Slicers` `Map Visual`
+
+An analysis of 7,043 telecom customers covering demographics, contracts, internet services, payment methods and locations, built to show where revenue comes from.
+
+- Profiled the data before building any visuals, separating structural nulls (blanks that mean "not applicable", such as no internet service) from real errors, and flagging 120 rows with invalid negative monthly charges
+- Verified that Total Revenue reconciles with Total Charges, refunds, extra data charges and long distance charges, with zero mismatches
+- Built an Age Group calculated column and a customer-count measure in DAX, with Gender and Customer Status slicers and a customer location map
+- Kept the scope to customer analysis and noted that the contract chart shows revenue, not customer counts
+- **Findings:** 7,043 customers generate 21.37M in revenue, two-year contracts bring in the most (about 42%), and Fiber Optic accounts for about two-thirds of internet charges
+
+**Repository:** [Telecom-Customer-Analytics-Dashboard-Power-BI-](https://github.com/Sellomphoo/Telecom-Customer-Analytics-Dashboard-Power-BI-)
+
+---
+
 ### 🛍️ Store Sales Dashboard
 **Transaction analysis, assumption testing and payment behaviour** · `Excel` `PivotTables` `PivotCharts` `Slicers`
 
@@ -39,43 +68,16 @@ Analysis of 5,000 retail transactions covering customer demographics, categories
 
 ---
 
-### 📈 Retail Sales Dashboard
-**Cleaning disguised nulls and recovering missing data responsibly** · `Excel` `PivotTables` `Slicers` `Array Formulas`
-
-A 1,825-row daily sales dataset covering one full year, with missing values hidden as text (`"NaN?"`, `"Null"`, `"Nan"`) alongside genuine blanks.
-
-- Recovered 7 missing categories **by elimination**, since every date contains exactly one row per category
-- Imputed missing Sales and Quantity with **category medians**, with flag columns so imputed rows stay traceable
-- Labelled the 6 unrecoverable Region values as **"Unknown"** instead of guessing, so regional totals stay honest
-- Spotted that all 5 missing Quantity values belonged to the Sports category and documented it as a data-quality observation
-- **Findings:** total sales R1,374,503.17 and profit R453,870.44; March was the strongest sales month (R121,248.87) and February the weakest (R105,601.14)
-
-**Repository:** [Retail-Sales-Dashboard](https://github.com/Sellomphoo/Retail-Sales-Dashboard)
-
----
-
-### 🏪 Retail Store Sales
-**Formula-based gap filling and a verification layer that caught real errors** · `Excel` `PivotTables` `Formulas` `Data Validation`
-
-A 12,575-row synthetic retail dataset with deliberately dirty data across price, quantity, total spent and item fields.
-
-- Recovered missing values using the exact relationship `Total Spent = Price Per Unit × Quantity`, and left rows with two or more gaps blank rather than fabricating figures
-- Extracted item abbreviations from messy text with `TEXTAFTER` and validated a Category → Item mapping across the full dataset before using it
-- Built a separate **Calculations sheet** that exposed formulas pointing at the wrong cells (duplicated counts, totals that didn't reconcile). Fixed so every total matches the 12,575 transactions
-- **Findings:** total revenue R1,552,071 spread within ~15% across eight categories, with discount use, payment method and channel all close to evenly split
-
-**Repository:** [Retail-Store-Sales](https://github.com/Sellomphoo/Retail-Store-Sales)
-
----
-
 ## Analytics Toolkit
 
 | Area | Technologies |
 |---|---|
+| Business Intelligence | Power BI (Power Query, data modelling, DAX measures, slicers, map visuals) |
 | Spreadsheets & Dashboards | Microsoft Excel, PivotTables, PivotCharts, Slicers, KPI cards |
+| Data Modelling | Separating customer-level and transaction-level data, one-to-many relationships, distinct counts |
 | Data Cleaning | Missing-value recovery, null standardisation, text parsing (`TEXTAFTER`), median imputation, `IFERROR` / `ISNUMBER` guards |
-| Formulas & Lookups | `COUNTIFS`, `SUMIF`, `VLOOKUP`, array formulas, helper columns |
-| Data Validation | Reconciliation sheets, cross-checks against totals, hypothesis testing |
+| Formulas & Lookups | DAX (`CALCULATE`, `DIVIDE`, `DISTINCTCOUNT`, `SWITCH`), `COUNTIFS`, `SUMIF`, `VLOOKUP`, array formulas, helper columns |
+| Data Validation | Reconciliation against raw totals, cross-checks, hypothesis testing |
 | Documentation | GitHub, README write-ups, documented cleaning decisions |
 
 ---
